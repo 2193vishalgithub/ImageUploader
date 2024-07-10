@@ -1,6 +1,7 @@
 import { api } from "@/trpc/server";
 import Image from "next/image";
 import ImageUploader from "./_components/ImageUploader";
+import Images from "./uploadthing/components/images";
 
 export default async function Home() {
   const images = await api.getImages();
@@ -25,6 +26,12 @@ export default async function Home() {
             </div>
           );
         })}
+      </div>
+      {/* upload things images */}
+
+      <div className="my-4 border-2 border-dashed p-4">
+        <p className="text-2xl font-bold">Upload things Images</p>
+        <Images />
       </div>
     </div>
   );
